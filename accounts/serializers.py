@@ -21,10 +21,13 @@ class SignupSerializer(serializers.ModelSerializer):
         )
         return user
     
+    def validate_email(self, value):
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError(detail="Email already exists..")
+        return value
+    
     
 
-class OTPSerialzier(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()
-    class Meta:
-        model = OTP
-        fields = ['user', 'otp']
+class OTPSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.CharField(max_length=6)

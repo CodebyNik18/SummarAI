@@ -121,3 +121,12 @@ STATIC_ROOT = 'static/'
 STATICFILES_DIRS = [
     'summarai_main/static/'
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'ashumanager77@gmail.com'
+EMAIL_HOST_PASSWORD = 'hetn rdri ayzt nrsq'

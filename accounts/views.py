@@ -1,4 +1,3 @@
-from rest_framework import generics
 from .serializers import SignupSerializer, OTPSerializer, LoginSerializer
 from django.contrib.auth.models import User
 from .models import OTP
@@ -7,8 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.core.mail import send_mail
 from faker import Faker
-from django.http import Http404
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 
 # generate otp after signup
@@ -88,8 +86,11 @@ class OTPAPI(APIView):
         
         
 class LoginAPI(APIView):
+    
     def post(self, request):
+        
         serializer = LoginSerializer(data=request.data)
+        
         if serializer.is_valid():
             try:
                 user_obj = User.objects.get(email=serializer.validated_data['email'])
@@ -98,8 +99,11 @@ class LoginAPI(APIView):
                     {'message': 'Invalid Credentials..'},
                     status=status.HTTP_401_UNAUTHORIZED
                 )
+                
             user = authenticate(request=request, username=user_obj.username, password=serializer.validated_data['password'])
+            
             if user:
+                
                 if user.is_active:
                     token, created = Token.objects.get_or_create(user=user)
                     return Response(
@@ -111,10 +115,12 @@ class LoginAPI(APIView):
                         {'message': 'User is not verified..'},
                         status=status.HTTP_403_FORBIDDEN
                     )
+                    
             else:
                 return Response(
                     {'message': 'Invalid Credentials..'},
                     status=status.HTTP_401_UNAUTHORIZED
                 )
+                
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

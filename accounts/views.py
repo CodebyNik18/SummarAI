@@ -101,7 +101,11 @@ class LoginAPI(APIView):
             user = authenticate(request=request, username=user_obj.username, password=serializer.validated_data['password'])
             if user:
                 if user.is_active:
-                    pass
+                    token, created = Token.objects.get_or_create(user=user)
+                    return Response(
+                        {'token': token.key},
+                        status=status.HTTP_200_OK
+                    )
                 else:
                     return Response(
                         {'message': 'User is not verified..'},
@@ -113,4 +117,4 @@ class LoginAPI(APIView):
                     status=status.HTTP_401_UNAUTHORIZED
                 )
         else:
-            print("Invalid Data")
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

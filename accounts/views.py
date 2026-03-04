@@ -9,6 +9,7 @@ from django.core.mail import send_mail
 from faker import Faker
 from django.http import Http404
 from django.contrib.auth import authenticate, login
+from rest_framework.authtoken.models import Token
 
 # generate otp after signup
 class SignUpAPI(APIView):
@@ -87,4 +88,29 @@ class OTPAPI(APIView):
         
         
 class LoginAPI(APIView):
-    pass
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            try:
+                user_obj = User.objects.get(email=serializer.validated_data['email'])
+            except User.DoesNotExist:
+                return Response(
+                    {'message': 'Invalid Credentials..'},
+                    status=status.HTTP_401_UNAUTHORIZED
+                )
+            user = authenticate(request=request, username=user_obj.username, password=serializer.validated_data['password'])
+            if user:
+                if user.is_active:
+                    pass
+                else:
+                    return Response(
+                        {'message': 'User is not verified..'},
+                        status=status.HTTP_403_FORBIDDEN
+                    )
+            else:
+                return Response(
+                    {'message': 'Invalid Credentials..'},
+                    status=status.HTTP_401_UNAUTHORIZED
+                )
+        else:
+            print("Invalid Data")

@@ -34,5 +34,5 @@ class OTPSerializer(serializers.Serializer):
     
     
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
+    email = serializers.CharField()
     password = serializers.CharField(write_only=True)

@@ -4,59 +4,225 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SummarAI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>SummarAI — Intelligent Summarization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
 
-    <div class="particles">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
-
     <nav>
-        <div class="logo">SummarAI</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-        </div>
+        <a class="nav-logo" href="{% url 'home' %}">
+            <div class="logo-mark"></div>
+            <span class="logo-text">Summar<span>AI</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            <li><a href="{% url 'register' %}" class="btn-register">Register</a></li>
+        </ul>
     </nav>
 
     <section class="hero">
-        <div>
-            <h1>Turn Your Study Material Into <span>Smart AI Summaries</span></h1>
-            <p>Upload text, PDFs, or images and get clean structured summaries powered by intelligent language models.
-                Study faster and revise smarter.</p>
-            <a href="#" class="btn primary">Start Now</a>
-            <a href="#" class="btn secondary">Learn More</a>
+        <div class="hero-bg-shapes">
+            <div class="shape-circle-1"></div>
+            <div class="shape-circle-2"></div>
+            <div class="shape-dots"></div>
+            <div class="shape-line"></div>
+        </div>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Powered by LangChain AI
+                </div>
+                <h1 class="hero-title">
+                    Turn long texts into<br>
+                    <em>sharp <span class="underline-word">insights</span></em>
+                </h1>
+                <p class="hero-desc">
+                    SummarAI uses advanced language models to condense your study material into clean, accurate
+                    summaries — so you can learn faster and retain more.
+                </p>
+                <div class="hero-actions">
+                    <a href="/register" class="btn-primary">
+                        <span>Get started free</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#how" class="btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3" />
+                            <path d="M6.5 6C6.5 5.17 7.17 4.5 8 4.5C8.83 4.5 9.5 5.17 9.5 6C9.5 7 8 7.5 8 8.5"
+                                stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                            <circle cx="8" cy="11" r="0.7" fill="currentColor" />
+                        </svg>
+                        See how it works
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-num">10x<span>+</span></div>
+                        <div class="stat-label">Faster reading</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">98<span>%</span></div>
+                        <div class="stat-label">Accuracy rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">Free<span>.</span></div>
+                        <div class="stat-label">To get started</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="floating-tag tag-top">
+                    <div class="tag-icon tag-icon-green">✦</div>
+                    AI summary ready
+                </div>
+                <div class="demo-card">
+                    <div class="demo-card-header">
+                        <div class="demo-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="demo-tab-label">summarai.app — text summary</span>
+                    </div>
+                    <div class="demo-body">
+                        <div class="demo-input-area">
+                            <div class="demo-input-label">Your text</div>
+                            <div class="demo-text-lines">
+                                <div class="demo-line"></div>
+                                <div class="demo-line"></div>
+                                <div class="demo-line"></div>
+                                <div class="demo-line"></div>
+                                <div class="demo-line"></div>
+                            </div>
+                        </div>
+                        <button class="demo-btn">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                <path d="M7.5 1.5v12M1.5 7.5h12" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Generate Summary
+                        </button>
+                        <div class="demo-output">
+                            <div class="demo-output-label">Summary</div>
+                            <div class="demo-output-lines">
+                                <div class="demo-output-line"></div>
+                                <div class="demo-output-line"></div>
+                                <div class="demo-output-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-tag tag-bottom">
+                    <div class="tag-icon tag-icon-amber">⚡</div>
+                    Summarized in 1.2s
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="features">
-        <h2>Why Use SummarAI</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Instant Processing</h3>
-                <p>Generate concise academic summaries within seconds.</p>
+    <section class="features" id="features">
+        <p class="section-label">Why students love it</p>
+        <h2 class="section-title">Built for academic excellence</h2>
+        <p class="section-sub">Every feature is designed with one goal: helping you understand and retain information
+            faster.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon icon-green">📄</div>
+                <h3 class="feature-title">Text Summarization</h3>
+                <p class="feature-desc">Paste any text — lecture notes, articles, chapters — and get a concise,
+                    structured summary without losing key ideas.</p>
             </div>
-            <div class="card">
-                <h3>Multiple Formats</h3>
-                <p>Supports text, PDFs and image-based notes.</p>
+            <div class="feature-card">
+                <div class="feature-icon icon-amber">⚡</div>
+                <h3 class="feature-title">Instant Results</h3>
+                <p class="feature-desc">LangChain-powered AI processes your content in seconds. No waiting, no queues —
+                    just fast, reliable summaries on demand.</p>
             </div>
-            <div class="card">
-                <h3>Focused For Students</h3>
-                <p>Optimized outputs for revision and exam preparation.</p>
+            <div class="feature-card">
+                <div class="feature-icon icon-blue">🎯</div>
+                <h3 class="feature-title">High Accuracy</h3>
+                <p class="feature-desc">Advanced language models preserve context and meaning, so your summaries are
+                    never misleading or incomplete.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+        <p class="section-label">Simple process</p>
+        <h2 class="section-title">Three steps to clarity</h2>
+        <p class="section-sub">No complexity, no learning curve. SummarAI works the way your brain does.</p>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-num-wrap">
+                    <div class="step-num">1</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Create your free account</h3>
+                    <p class="step-desc">Register in under a minute. No credit card needed. Your account gives you
+                        access to your full summary history and personalized settings.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num-wrap">
+                    <div class="step-num">2</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Paste or type your content</h3>
+                    <p class="step-desc">Drop in any block of text — from a single paragraph to full chapters. SummarAI
+                        handles any length and automatically detects the structure.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num-wrap">
+                    <div class="step-num">3</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Read your smart summary</h3>
+                    <p class="step-desc">Receive a clean, organized summary within seconds. Key points are preserved,
+                        filler is removed, and you keep everything that matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-dots"></div>
+        <div class="cta-inner">
+            <p class="cta-label">Start today — it's free</p>
+            <h2 class="cta-title">Study <em>smarter</em>,<br>not harder.</h2>
+            <p class="cta-desc">Join students who are already using SummarAI to cut their study time in half and walk
+                into exams with confidence.</p>
+            <div class="cta-buttons">
+                <a href="{% url 'register' %}" class="btn-light">Create free account</a>
+                <a href="{% url 'learn_more' %}" class="btn-outline-light">Learn more</a>
             </div>
         </div>
     </section>
 
     <footer>
-        © 2026 SummarAI
+        <a class="footer-brand" href="#">
+            <div class="footer-logo"></div>
+            <span class="footer-name">Summar<span>AI</span></span>
+        </a>
+        <p class="footer-copy">© 2025 SummarAI. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
     </footer>
 
 </body>

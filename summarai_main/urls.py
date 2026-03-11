@@ -20,7 +20,15 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Main Pages
     path('', views.home, name='home'),
+    path('login/', views.login, name='login'),
+    path('learn-more/', views.learn_more, name='learn_more'),
+    path('register/', views.register, name='register'),
+    path('about/', views.about, name='about'),
+    
+    # API Pages
     path('api/v3/accounts/', include('accounts.urls')),
     path('api/v3/summarizer/', include('summarizer.urls')),
     path('api-auth/', include('rest_framework.urls'))

@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — SummarAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <nav>
+        <a class="nav-logo" href="index.html">
+            <div class="logo-mark"></div>
+            <span class="logo-text">Summar<span>AI</span></span>
+        </a>
+        <div class="nav-right">Don't have an account? <a href="register.html">Register free</a></div>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="left-panel">
+            <div class="left-panel-bg"></div>
+            <div class="left-dots"></div>
+            <div class="left-content">
+                <div class="left-tag"><span class="left-dot"></span> Welcome back</div>
+                <h2 class="left-title">Good to see<br>you <em>again.</em></h2>
+                <p class="left-desc">Your summaries, history, and insights are waiting. Log in and pick up right where
+                    you left off.</p>
+            </div>
+            <div class="left-features">
+                <div class="left-feat">
+                    <div class="feat-icon feat-icon-g">📄</div>
+                    <div class="feat-text">
+                        <h4>Your summary history</h4>
+                        <p>Access everything you've summarized</p>
+                    </div>
+                </div>
+                <div class="left-feat">
+                    <div class="feat-icon feat-icon-a">⚡</div>
+                    <div class="feat-text">
+                        <h4>Instant AI summaries</h4>
+                        <p>Powered by LangChain language models</p>
+                    </div>
+                </div>
+                <div class="left-feat">
+                    <div class="feat-icon feat-icon-b">🎯</div>
+                    <div class="feat-text">
+                        <h4>Smart & accurate</h4>
+                        <p>Preserves meaning, removes noise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="form-card">
+                <h1 class="form-heading">Sign in</h1>
+                <p class="form-sub">New here? <a href="register.html">Create a free account</a></p>
+
+                <form method="post" action="/login">
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"
+                            required>
+                    </div>
+                    <div class="field">
+                        <div class="field-row">
+                            <label for="password">Password</label>
+                            <a href="#" class="forgot">Forgot password?</a>
+                        </div>
+                        <div class="password-wrap">
+                            <input type="password" id="password" name="password" placeholder="Enter your password"
+                                autocomplete="current-password" required>
+                            <button type="button" class="eye-btn" onclick="togglePwd('password', this)">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path
+                                        d="M9 3.75C5.25 3.75 2.085 6.12 1.5 9c.585 2.88 3.75 5.25 7.5 5.25S15.915 11.88 16.5 9c-.585-2.88-3.75-5.25-7.5-5.25z"
+                                        stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                                    <circle cx="9" cy="9" r="2.25" stroke="currentColor" stroke-width="1.3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Keep me signed in for 30 days</label>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Sign in to SummarAI</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="register-link">
+                    First time? <a href="register.html">Create your free account →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+
+</html>

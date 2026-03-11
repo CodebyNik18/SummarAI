@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — SummarAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<body>
+    <nav>
+        <a class="nav-logo" href="index.html">
+            <div class="logo-mark"></div>
+            <span class="logo-text">Summar<span>AI</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="learn-more.html">Learn more</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="register.html" class="btn-register">Register</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-about">
+        <div class="hero-about-bg"></div>
+        <div class="hero-about-dots"></div>
+        <div class="hero-about-inner">
+            <div class="about-badge">Our story</div>
+            <h1 class="hero-about-title">Built to make<br>learning <em>effortless.</em></h1>
+            <p class="hero-about-desc">SummarAI was built with one conviction: students shouldn't have to spend hours
+                reading when AI can give them the essence in seconds.</p>
+        </div>
+    </section>
+
+    <section style="padding: 0 5%;">
+        <div class="about-mission">
+            <div>
+                <p class="mission-label">Our mission</p>
+                <h2 class="mission-title">Making knowledge<br><em>accessible</em> for everyone</h2>
+                <p class="mission-text">Every student deserves the tools to learn effectively, regardless of how much
+                    time they have. SummarAI distills complex academic content into precise, meaningful summaries —
+                    preserving the ideas that matter and removing everything that doesn't.</p>
+                <p class="mission-text">We built this on top of LangChain and Django REST Framework so it's fast,
+                    scalable, and ready to grow with you — from text today, to PDFs and images tomorrow.</p>
+                <blockquote class="mission-quote">
+                    "The goal was never to replace reading. It was to make understanding faster — so students could
+                    focus on thinking, not just consuming."
+                    <cite>— SummarAI Team</cite>
+                </blockquote>
+            </div>
+            <div class="mission-visual">
+                <div class="vis-card">
+                    <div class="vis-card-icon">🚀</div>
+                    <div class="vis-card-num">10x</div>
+                    <div class="vis-card-label">Faster comprehension compared to reading raw text from start to finish
+                    </div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">🎯</div>
+                    <div class="vis-card-num">98%</div>
+                    <div class="vis-card-label">Key point retention rate</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">⚡</div>
+                    <div class="vis-card-num">&lt;2s</div>
+                    <div class="vis-card-label">Average summary time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section">
+        <p class="section-label">Technology</p>
+        <h2 class="section-title">Powered by the best stack</h2>
+        <p class="section-sub">We chose each technology deliberately — for performance, flexibility, and future growth.
+        </p>
+        <div class="tech-stack">
+            <div class="tech-card">
+                <div class="tech-card-icon tc-green">🦜</div>
+                <div class="tech-name">LangChain</div>
+                <div class="tech-role">AI orchestration for language model pipelines and smart summarization</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon tc-amber">🐍</div>
+                <div class="tech-name">Django</div>
+                <div class="tech-role">Robust backend framework handling auth, models, and business logic</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon tc-blue">⚡</div>
+                <div class="tech-name">DRF</div>
+                <div class="tech-role">Django REST Framework powering clean, scalable API endpoints</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon tc-ink">🤖</div>
+                <div class="tech-name">LLMs</div>
+                <div class="tech-role">State-of-the-art language models providing the intelligence behind every summary
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <p class="section-label">What we stand for</p>
+        <h2 class="section-title">Our core values</h2>
+        <p class="section-sub">The principles that guide every decision we make.</p>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-num">01</div>
+                <h3 class="value-title">Student first, always</h3>
+                <p class="value-desc">Every feature, every design choice, and every technical decision starts with one
+                    question: does this help students learn better?</p>
+            </div>
+            <div class="value-item">
+                <div class="value-num">02</div>
+                <h3 class="value-title">Accuracy over speed</h3>
+                <p class="value-desc">We'd rather deliver a perfect summary in 2 seconds than a flawed one in half a
+                    second. Context and meaning are never sacrificed.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-num">03</div>
+                <h3 class="value-title">Open to grow</h3>
+                <p class="value-desc">Text is only the beginning. We're building toward a future where any document —
+                    PDF, image, slide — can be instantly understood.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <p class="section-label">The people behind it</p>
+        <h2 class="section-title">Meet the team</h2>
+        <p class="section-sub">A small team with a big belief that AI should make education more human, not less.</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar avatar-1">👨‍💻</div>
+                <div class="team-name">Lead Developer</div>
+                <div class="team-role">Backend & AI</div>
+                <p class="team-bio">Built the Django + LangChain pipeline from the ground up. Obsessed with clean
+                    architecture and fast inference.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar avatar-2">🎨</div>
+                <div class="team-name">Product Designer</div>
+                <div class="team-role">UI / UX</div>
+                <p class="team-bio">Believes that good design is invisible. Makes SummarAI feel intuitive before users
+                    even read a single instruction.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar avatar-3">🧠</div>
+                <div class="team-name">AI Researcher</div>
+                <div class="team-role">LLM & Prompting</div>
+                <p class="team-bio">Fine-tunes the prompting strategies and model configurations that make SummarAI's
+                    output remarkably accurate.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-dots"></div>
+        <div class="cta-inner">
+            <p class="cta-label">Ready to start?</p>
+            <h2 class="cta-title">Join us on the journey to <em>smarter</em> learning.</h2>
+            <p class="cta-desc">It's free to get started. No credit card. No friction. Just better studying.</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn-light">Create free account</a>
+                <a href="learn-more.html" class="btn-outline-light">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a class="footer-brand" href="index.html">
+            <div class="footer-logo"></div>
+            <span class="footer-name">Summar<span>AI</span></span>
+        </a>
+        <p class="footer-copy">© 2025 SummarAI. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

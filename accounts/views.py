@@ -24,7 +24,7 @@ class SignUpAPI(APIView):
             OTP.objects.create(user=user, generated_otp=generated_otp)
             
             send_mail(
-                subject='for OTP Verification',
+                subject='OTP Verification',
                 message=f"Here is the OTP for otp verification {generated_otp}",
                 from_email='ashumanager77@gmail.com',
                 recipient_list=[user.email]
@@ -105,7 +105,7 @@ class LoginAPI(APIView):
             if user:
                 
                 if user.is_active:
-                    token, created = Token.objects.get_or_create(user=user)
+                    token, _ = Token.objects.get_or_create(user=user)
                     return Response(
                         {'token': token.key},
                         status=status.HTTP_200_OK

@@ -17,11 +17,11 @@
 <body>
 
     <nav>
-        <a class="nav-logo" href="index.html">
+        <a class="nav-logo" href="{% url 'home' %}">
             <div class="logo-mark"></div>
             <span class="logo-text">Summar<span>AI</span></span>
         </a>
-        <div class="nav-right">Already have an account? <a href="login.html">Sign in</a></div>
+        <div class="nav-right">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
     </nav>
 
     <div class="page-wrap">
@@ -51,7 +51,7 @@
                 <!-- ── STEP 1: Account details ── -->
                 <div class="step-screen active" id="step1">
                     <h1 class="form-heading">Create account</h1>
-                    <p class="form-sub">Already a member? <a href="login.html">Sign in here</a></p>
+                    <p class="form-sub">Already a member? <a href="{% url 'login' %}">Sign in here</a></p>
 
                     <div class="alert alert-error" id="a1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                             style="flex-shrink:0">
@@ -142,11 +142,11 @@
                         </div>
                     </div>
 
-                    <div class="terms-row">
+                    <!-- <div class="terms-row">
                         <input type="checkbox" id="terms">
                         <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
                                 Policy</a></label>
-                    </div>
+                    </div> -->
 
                     <button type="button" class="btn-submit" id="btnContinue" onclick="continueStep()">
                         <span>Continue to verify email</span>
@@ -155,7 +155,7 @@
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <div class="login-link">Already have an account? <a href="login.html">Sign in →</a></div>
+                    <div class="login-link">Already have an account? <a href="{% url 'login' %}">Sign in →</a></div>
                 </div>
 
                 <!-- ── STEP 2: OTP verification ── -->
@@ -212,7 +212,7 @@
                         <h2 class="success-title">You're all set!</h2>
                         <p class="success-sub">Account created and <strong id="successEmail"></strong> verified. Welcome
                             to SummarAI!</p>
-                        <a href="/dashboard" class="btn-go">
+                        <a href="{% url 'home' %}" class="btn-go">
                             Go to dashboard
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                 <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"

@@ -52,7 +52,7 @@
                     summaries — so you can learn faster and retain more.
                 </p>
                 <div class="hero-actions">
-                    <a href="/register" class="btn-primary">
+                    <a href="{% url 'register' %}" class="btn-primary">
                         <span>Get started free</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
@@ -213,7 +213,7 @@
     </section>
 
     <footer>
-        <a class="footer-brand" href="#">
+        <a class="footer-brand" href="{% url 'home' %}">
             <div class="footer-logo"></div>
             <span class="footer-name">Summar<span>AI</span></span>
         </a>

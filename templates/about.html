@@ -16,15 +16,15 @@
 
 <body>
     <nav>
-        <a class="nav-logo" href="index.html">
+        <a class="nav-logo" href="{% url 'home' %}">
             <div class="logo-mark"></div>
             <span class="logo-text">Summar<span>AI</span></span>
         </a>
         <ul class="nav-links">
             <li><a href="index.html#features">Features</a></li>
-            <li><a href="learn-more.html">Learn more</a></li>
-            <li><a href="login.html">Log in</a></li>
-            <li><a href="register.html" class="btn-register">Register</a></li>
+            <li><a href="{% url 'learn_more' %}">Learn more</a></li>
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            <li><a href="{% url 'register' %}" class="btn-register">Register</a></li>
         </ul>
     </nav>
 
@@ -169,22 +169,22 @@
             <h2 class="cta-title">Join us on the journey to <em>smarter</em> learning.</h2>
             <p class="cta-desc">It's free to get started. No credit card. No friction. Just better studying.</p>
             <div class="cta-buttons">
-                <a href="register.html" class="btn-light">Create free account</a>
-                <a href="learn-more.html" class="btn-outline-light">Learn more</a>
+                <a href="{% url 'register' %}" class="btn-light">Create free account</a>
+                <a href="{% url 'learn_more' %}" class="btn-outline-light">Learn more</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <a class="footer-brand" href="index.html">
+        <a class="footer-brand" href="{% url 'home' %}">
             <div class="footer-logo"></div>
             <span class="footer-name">Summar<span>AI</span></span>
         </a>
         <p class="footer-copy">© 2025 SummarAI. All rights reserved.</p>
         <ul class="footer-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
         </ul>
     </footer>
 </body>

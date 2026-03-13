@@ -16,11 +16,11 @@
 
 <body>
     <nav>
-        <a class="nav-logo" href="index.html">
+        <a class="nav-logo" href="{% url 'home' %}">
             <div class="logo-mark"></div>
             <span class="logo-text">Summar<span>AI</span></span>
         </a>
-        <div class="nav-right">Don't have an account? <a href="register.html">Register free</a></div>
+        <div class="nav-right">Don't have an account? <a href="{% url 'register' %}">Register free</a></div>
     </nav>
 
     <div class="page-wrap">
@@ -61,7 +61,7 @@
         <div class="right-panel">
             <div class="form-card">
                 <h1 class="form-heading">Sign in</h1>
-                <p class="form-sub">New here? <a href="register.html">Create a free account</a></p>
+                <p class="form-sub">New here? <a href="{% url 'register' %}">Create a free account</a></p>
 
                 <form method="post" action="/login">
                     <div class="field">
@@ -72,7 +72,7 @@
                     <div class="field">
                         <div class="field-row">
                             <label for="password">Password</label>
-                            <a href="#" class="forgot">Forgot password?</a>
+                            <!-- <a href="#" class="forgot">Forgot password?</a> -->
                         </div>
                         <div class="password-wrap">
                             <input type="password" id="password" name="password" placeholder="Enter your password"
@@ -87,10 +87,10 @@
                             </button>
                         </div>
                     </div>
-                    <div class="checkbox-row">
+                    <!-- <div class="checkbox-row">
                         <input type="checkbox" id="remember" name="remember">
                         <label for="remember">Keep me signed in for 30 days</label>
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn-submit">
                         <span>Sign in to SummarAI</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -101,7 +101,7 @@
                 </form>
 
                 <div class="register-link">
-                    First time? <a href="register.html">Create your free account →</a>
+                    First time? <a href="{% url 'register' %}">Create your free account →</a>
                 </div>
             </div>
         </div>
